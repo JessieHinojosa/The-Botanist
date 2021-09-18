@@ -1,10 +1,15 @@
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
+      <main>
         <h1>The Botanist</h1>
-      </header>
+      </main>
+      <Footer />
     </div>
   );
 }
