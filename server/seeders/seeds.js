@@ -1,7 +1,7 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { User, Category } = require('../models');
+const { User, Category, Product } = require('../models');
 
 db.once('open', async () => {
     
@@ -74,11 +74,333 @@ db.once('open', async () => {
     ]
         const createdCategories = await Category.collection.insertMany(categoryData);
   
-        
+
     // create product
-    // for (let i = 0; i < 100; i += 1) {
-    // }
-  
+      const productData = [
+        {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'Foliage',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'Foliage',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'Foliage',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'Foliage',
+            isFeature: true
+         },
+        {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'cactus',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'cactus',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'cactus',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'cactus',
+            isFeature: true
+         },
+        {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'bulbous',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'bulbous',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'bulbous',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'bulbous',
+            isFeature: true
+         },
+        {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'palm',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'palm',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'palm',
+            isFeature: true
+         },
+         {
+            name: '',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+                {
+                    name: '',
+                    commment: ''
+                }
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            category: 'palm',
+            isFeature: true
+         },
+        ]   
+        const createdProducts = await Product.collection.insertMany(productData);
+
+              
     console.log('all done!');
     process.exit(0);
   });

@@ -1,4 +1,4 @@
-const { User, Category } = require("../models");
+const { User, Category, Product } = require("../models");
 
 const resolvers = {
     Query: {
@@ -10,6 +10,12 @@ const resolvers = {
       categories: async () => {
         return await Category.find();
       },
+
+          // test product with dummy data
+      products: async () => {
+        return await Product.find()   
+      }
+         
     //   products: async (parent, { category, name }) => {
     //     const params = {};
   
