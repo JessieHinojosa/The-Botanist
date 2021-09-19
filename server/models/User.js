@@ -13,41 +13,49 @@ const Order = require('./Order');
 // })
 
 const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 5
-  },
-  shippingAddress: {
-    address: {type: String, required: true},
-    city: {type: String, required: true},
-    postalCode: {type: Number, required: true},
-    country: {type: String, required: true},
-  },
-  isAdmin: {
-      type: Boolean,
+    firstName: {
+      type: String,
       required: true,
-      default: false
+      trim: true
+    },
+    lastName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!']
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 5
+    },
+    shippingAddress: {
+      address: {type: String, required: true},
+      city: {type: String, required: true},
+      postalCode: {type: Number, required: true},
+      country: {type: String, required: true},
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    orders: [Order.schema]
+  }, 
+  {
+    toJSON: {
+      virtuals: true
+    }
   },
-  // orders: [Order.schema]
-}, {
+  {
     timestamps: true
-});
+  }
+);
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {

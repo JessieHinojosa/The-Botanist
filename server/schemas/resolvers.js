@@ -1,65 +1,74 @@
-const { User, Category, Product } = require("../models");
+const { AuthenticationError } = require('apollo-server-express');
+const { User, Product, Category, Order } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+      me: async (parent, args, context) => {
+        if (context.user) {
+          const user = await User.findById(context.user._id).populate({
+            path: 'orders.products',
+            populate: 'category'
+          });
+  
+          user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+  
+          return user;
+        }
+    
+        throw new AuthenticationError('Not logged in');
+      },
+      // for development only
       users: async () => {
         return await User.find()
                          .select('-__password')
-                        //  .populate('orders');
+                         .populate('orders');
       },
+      // 
+
+      // for admin only
+      user: async (parent, { email }) => {
+        return User.findOne({ email })
+          .select('-__v -password')
+          .populate('orders');
+      },  
+      // 
+
       categories: async () => {
         return await Category.find();
       },
 
           // test product with dummy data
-      products: async () => {
-        return await Product.find()   
-      }
-         
-    //   products: async (parent, { category, name }) => {
-    //     const params = {};
+      products: async (parent, { category, name }) => {
+        const params = {};
+
+        if (category) {
+          params.category = category;
+        }
+
+        if (name) {
+          params.name = {
+            $regex: name
+          };
+        }
+
+        return await Product.find(params).populate('category');
+      },
+      product: async (parent, { _id }) => {
+        return await Product.findById(_id).populate('category');
+      },
+      order: async (parent, { _id }, context) => {
+        if (context.user) {
+          const user = await User.findById(context.user._id).populate({
+            path: 'orders.products',
+            populate: 'category'
+          });
   
-    //     if (category) {
-    //       params.category = category;
-    //     }
+          return user.orders.id(_id);
+        }
   
-    //     if (name) {
-    //       params.name = {
-    //         $regex: name
-    //       };
-    //     }
-  
-    //     return await Product.find(params).populate('category');
-    //   },
-    //   product: async (parent, { _id }) => {
-    //     return await Product.findById(_id).populate('category');
-    //   },
-      // user: async (parent, args, context) => {
-      //   if (context.user) {
-      //     const user = await User.findById(context.user._id).populate({
-      //       path: 'orders.products',
-      //       populate: 'category'
-      //     });
-  
-      //     user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-  
-      //     return user;
-      //   }
-  
-    //     throw new AuthenticationError('Not logged in');
-    //   },
-    //   order: async (parent, { _id }, context) => {
-    //     if (context.user) {
-    //       const user = await User.findById(context.user._id).populate({
-    //         path: 'orders.products',
-    //         populate: 'category'
-    //       });
-  
-    //       return user.orders.id(_id);
-    //     }
-  
-    //     throw new AuthenticationError('Not logged in');
-    //   },
+        throw new AuthenticationError('Not logged in');
+      },
     //   checkout: async (parent, args, context) => {
     //     const order = new Order({ products: args.products });
     //     const url = new URL(context.headers.referer).origin;

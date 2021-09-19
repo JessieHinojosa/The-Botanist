@@ -27,7 +27,6 @@ const typeDefs = gql`
     indoor: Boolean
     outdoor: Boolean
   }
-
   type Product {
     _id: ID
     name: String
@@ -36,7 +35,7 @@ const typeDefs = gql`
     numReviews: Int
     countInStock: Int
     price: Float
-  
+    category: Category
     isFeature: Boolean
   }
 
@@ -49,18 +48,17 @@ const typeDefs = gql`
   type Checkout {
     session: ID
   }
-
-
   type Auth {
-    token: ID
+    token: ID!
     user: User
   }
 
   type Query {
+    me: User
     users: [User]
-    user: User
+    user(email: String!): User
     categories: [Category]
-    products: [Product]
+    products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
