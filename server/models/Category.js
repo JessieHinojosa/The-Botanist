@@ -7,10 +7,19 @@ const categorySchema = new Schema({
     type: String,
     required: true,
     trim: true
-  }
+  },
   description: {
     type: String
+  },
+  indoor: {
+    type: Boolean,
+    required: true,
+  },
+  outdoor: {
+    type: Boolean,
+    required: true,
   }
+
 });
 
 const Category = mongoose.model('Category', categorySchema);

@@ -11,11 +11,11 @@ const reviewSchema = mongoose.Schema({
 
 const productSchema = new Schema({
     // user is to keep track of which admin created product
-  user: {
-     type: Schema.types.ObjectId,
-     required: true,
-     ref: 'User'
-  },
+  // user: {
+  //    type: Schema.types.ObjectId,
+  //    required: true,
+  //    ref: 'User'
+  // },
   name: {
     type: String,
     required: true,
@@ -49,6 +49,11 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
+  },
+  isFeatured: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 });
 

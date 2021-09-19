@@ -1,19 +1,33 @@
-const{ mongoose } = require('mongoose');
+// const{ mongoose } = require('mongoose');
 
 
-const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MOGO_URI, {
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-            useCreateIndex: true
-        })
-        console.log(`MongoDB Connected: ${conn.connection.host}`)
+// const connectDB = async () => {
+//     try {
+//         const conn = await mongoose.connect(process.env.MOGO_URI, {
+//             useUnifiedTopology: true,
+//             useNewUrlParser: true,
+//             useCreateIndex: true
+//         })
+//         console.log(`MongoDB Connected: ${conn.connection.host}`)
 
-    } catch(error) {
-        console.log(`Error ${error.message}`)
-        process.exit(1)
-    }
-}
+//     } catch(error) {
+//         console.log(`Error ${error.message}`)
+//         process.exit(1)
+//     }
+// }
 
-module.exports = connectDB;
+// module.exports = connectDB;
+
+const mongoose = require('mongoose');
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
+module.exports = mongoose.connection;

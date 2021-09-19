@@ -4,6 +4,14 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
 
+
+// const addrressSchema = mongoose.Schema({
+//   address: {type: String, required: true},
+//   city: {type: String, required: true},
+//   postalCode: {type: Number, required: true},
+//   country: {type: String, required: true},
+// })
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -26,17 +34,17 @@ const userSchema = new Schema({
     minlength: 5
   },
   shippingAddress: {
-      address: {type: String, required: true},
-      city: {type: String, required: true},
-      poastalCode: {type: String, required: true},
-      country: {type: String, required: true},
+    address: {type: String, required: true},
+    city: {type: String, required: true},
+    postalCode: {type: Number, required: true},
+    country: {type: String, required: true},
   },
   isAdmin: {
       type: Boolean,
       required: true,
       default: false
   },
-  orders: [Order.schema]
+  // orders: [Order.schema]
 }, {
     timestamps: true
 });

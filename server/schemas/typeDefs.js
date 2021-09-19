@@ -1,9 +1,31 @@
 const { gql } = require('apollo-server-express');
+const { GraphQLObjectType, GraphQLString, GraphQLInt } = require('graphql');
+
+// const ShippingAddress = new GraphQLObjectType({
+//   name: 'shippingAddress',
+//   fields: () => ({
+//     address: {type: GraphQLString },
+//     city: {type: GraphQLString },
+//     postalCode: {type: GraphQLInt },
+//     country: {type: GraphQLString },
+//   })
+// })
 
 const typeDefs = gql`
+  type User {
+    _id: ID
+    firstName: String
+    lastName: String
+    email: String
+    isAdmin: Boolean
+    orders: [Order]
+  }
   type Category {
     _id: ID
     name: String
+    description: String
+    indoor: Boolean
+    outdoor: Boolean
   }
 
   type Product {
@@ -26,13 +48,6 @@ const typeDefs = gql`
     session: ID
   }
 
-  type User {
-    _id: ID
-    firstName: String
-    lastName: String
-    email: String
-    orders: [Order]
-  }
 
   type Auth {
     token: ID
@@ -40,10 +55,11 @@ const typeDefs = gql`
   }
 
   type Query {
+    users: [User]
+    user: User
     categories: [Category]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
-    user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
   }
