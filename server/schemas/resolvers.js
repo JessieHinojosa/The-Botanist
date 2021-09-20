@@ -18,7 +18,7 @@ const resolvers = {
     
         throw new AuthenticationError('Not logged in');
       },
-      // for development only
+      // for admin only
       users: async () => {
         return await User.find()
                          .select('-__password')
@@ -26,14 +26,19 @@ const resolvers = {
       },
       // 
 
-      // for admin only
-      user: async (parent, { email }) => {
-        return User.findOne({ email })
-          .select('-__v -password')
-          .populate('orders');
-      },  
-      // 
-
+      user: async (parent, args, context) => {
+        if (context.user) {
+          const user = await User.findById(context.user._id).populate({
+            path: 'orders.products',
+            populate: 'category'
+          });
+  
+          user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+  
+          return user;
+        }
+  
+      },
       categories: async () => {
         return await Category.find();
       },
@@ -106,14 +111,14 @@ const resolvers = {
             
     //         return { session: session.id };
     //   }
-    // },
-    // Mutation: {
-    //   addUser: async (parent, args) => {
-    //     const user = await User.create(args);
-    //     const token = signToken(user);
+    },
+    Mutation: {
+      addUser: async (parent, args) => {
+        const user = await User.create(args);
+        const token = signToken(user);
   
-    //     return { token, user };
-    //   },
+        return { token, user };
+      },
     //   addOrder: async (parent, { products }, context) => {
     //     console.log(context);
     //     if (context.user) {
@@ -154,8 +159,8 @@ const resolvers = {
     //     const token = signToken(user);
   
     //     return { token, user };
-    //   }
-    }
+      }
+  
   };
   
   module.exports = resolvers;

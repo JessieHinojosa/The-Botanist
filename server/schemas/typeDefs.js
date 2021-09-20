@@ -12,51 +12,51 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt } = require('graphql');
 // })
 
 const typeDefs = gql`
-  type User {
-    _id: ID
-    firstName: String
-    lastName: String
-    email: String
-    isAdmin: Boolean
-    orders: [Order]
-  }
-  type Category {
-    _id: ID
-    name: String
-    description: String
-    indoor: Boolean
-    outdoor: Boolean
-  }
-  type Product {
-    _id: ID
-    name: String
-    description: String
-    image: String
-    numReviews: Int
-    countInStock: Int
-    price: Float
-    category: Category
-    isFeature: Boolean
-  }
+type Category {
+  _id: ID
+  name: String
+  description: String
+  indoor: Boolean
+  outdoor: Boolean
+}
+type Product {
+  _id: ID
+  name: String
+  description: String
+  image: String
+  numReviews: Int
+  countInStock: Int
+  price: Float
+  category: Category
+  isFeature: Boolean
+}
 
-  type Order {
-    _id: ID
-    purchaseDate: String
-    products: [Product]
-  }
+type Order {
+  _id: ID
+  purchaseDate: String
+  products: [Product]
+}
 
-  type Checkout {
-    session: ID
-  }
+type Checkout {
+  session: ID
+}
+type User {
+  _id: ID
+  firstName: String
+  lastName: String
+  email: String
+  isAdmin: Boolean
+  orders: [Order]
+}
   type Auth {
-    token: ID!
+    token: ID
     user: User
   }
 
   type Query {
     me: User
     users: [User]
-    user(email: String!): User
+    user: User
     categories: [Category]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
@@ -65,7 +65,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product

@@ -1,5 +1,5 @@
-const dotenv = require('dotenv')
 const express = require('express');
+const dotenv = require('dotenv');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
