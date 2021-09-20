@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Indoor = () => {
+const Category = () => {
     return (
         <div>
-            Indoor
+            category
         </div>
     )
 }
 
-export default Indoor
+export default Category

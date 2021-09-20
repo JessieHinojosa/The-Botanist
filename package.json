@@ -1,0 +1,31 @@
+{
+  "name": "the-botanist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.6"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayMaverick/The-Botanist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayMaverick/The-Botanist/issues"
+  },
+  "homepage": "https://github.com/jayMaverick/The-Botanist#readme"
+}
