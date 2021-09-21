@@ -28,7 +28,7 @@ type Product {
   countInStock: Int
   price: Float
   category: Category
-  isFeature: Boolean
+  isFeatured: Boolean
 }
 
 type Order {
