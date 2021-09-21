@@ -7,7 +7,7 @@ db.once('open', async () => {
 
     await User.deleteMany({});
     await Category.deleteMany({});
-    // await Product.deleteMany({});
+    await Product.deleteMany({});
 
 
     // create user data
@@ -83,22 +83,77 @@ db.once('open', async () => {
             image: 'testimag',
             reviews: [
                 {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
+                    name: 'test review name',
                     commment: ''
                 }
             ],
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: 'Foliage',
             isFeature: true
         },
         {
-            name: '',
+            name: 'test2',
+            description: 'test review name 2',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            isFeature: true
+        },
+        {
+            name: 'test3',
+            description: 'test review name 3',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            isFeature: true
+        },
+        {
+            name: 'test4',
+            description: 'test review name 4',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            isFeature: true
+        },
+        {
+            name: 'test 5',
+            description: '',
+            image: '',
+            reviews: [
+                {
+                    name: '',
+                    commment: ''
+                },
+            ],
+            numReviews: 2,
+            price: 0.99,
+            countInStock: 25,
+            isFeature: true
+        },
+        {
+            name: 'test 6 ',
             description: '',
             image: '',
             reviews: [
@@ -114,11 +169,10 @@ db.once('open', async () => {
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: 'Foliage',
             isFeature: true
         },
         {
-            name: '',
+            name: 'test 7',
             description: '',
             image: '',
             reviews: [
@@ -126,19 +180,14 @@ db.once('open', async () => {
                     name: '',
                     commment: ''
                 },
-                {
-                    name: '',
-                    commment: ''
-                }
             ],
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: 'cactus',
             isFeature: true
         },
         {
-            name: '',
+            name: 'test 8',
             description: '',
             image: '',
             reviews: [
@@ -146,95 +195,10 @@ db.once('open', async () => {
                     name: '',
                     commment: ''
                 },
-                {
-                    name: '',
-                    commment: ''
-                }
             ],
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: 'cactus',
-            isFeature: true
-        },
-        {
-            name: '',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
-                    commment: ''
-                }
-            ],
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: 'bulbous',
-            isFeature: true
-        },
-        {
-            name: '',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
-                    commment: ''
-                }
-            ],
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: 'bulbous',
-            isFeature: true
-        },
-        {
-            name: '',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
-                    commment: ''
-                }
-            ],
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: 'palm',
-            isFeature: true
-        },
-        {
-            name: '',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
-                    commment: ''
-                }
-            ],
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: 'palm',
             isFeature: true
         },
     ]

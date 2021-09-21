@@ -44,6 +44,9 @@ const resolvers = {
       },
 
           // test product with dummy data
+      allProducts: async () => {
+        return Product.find();
+      },
       products: async (parent, { category, name }) => {
         const params = {};
 

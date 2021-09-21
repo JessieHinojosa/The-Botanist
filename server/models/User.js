@@ -34,12 +34,6 @@ const userSchema = new Schema({
       required: true,
       minlength: 5
     },
-    // shippingAddress: {
-    //   address: {type: String, required: true},
-    //   city: {type: String, required: true},
-    //   postalCode: {type: Number, required: true},
-    //   country: {type: String, required: true},
-    // },
     isAdmin: {
         type: Boolean,
         required: true,
