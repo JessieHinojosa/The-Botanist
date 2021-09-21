@@ -1,21 +1,26 @@
-import Header from './components/Header/index';
-import Footer from './components/Footer/index';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+
+// Import pages
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import Detail from './pages/Detail';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
+// Import components
+import Nav from './components/Nav';
+import Footer from './components/Footer/index';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <h1 className='text-red'>youuuuu </h1>
+        <Nav />
         <main>
           <Switch>
               <Route exact path="/" component={Home} />
@@ -24,7 +29,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/success" component={Success} />
-           </Switch>
+          </Switch>
         </main>
         <Footer />
       </div>
