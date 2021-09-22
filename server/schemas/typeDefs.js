@@ -27,7 +27,7 @@ type Product {
   numReviews: Int
   countInStock: Int
   price: Float
-  category: Category
+  category: String
   isFeatured: Boolean
 }
 
