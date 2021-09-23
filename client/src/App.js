@@ -1,6 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 
 // Import pages
@@ -15,12 +22,33 @@ import Success from './pages/Success';
 import Nav from './components/Nav';
 import Footer from './components/Footer/index';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+
 
 function App() {
   return (
+    <ApolloProvider client={client} >
     <Router>
       <div className="App">
-        <h1 className='text-red'>youuuuu </h1>
+        <h1 className='text-red'>The Botanist </h1>
         <Nav />
         <main>
           <Switch>
@@ -35,6 +63,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ApolloProvider>
   );
 }
 
