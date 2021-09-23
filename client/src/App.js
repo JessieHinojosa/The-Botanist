@@ -18,9 +18,8 @@ import Footer from './components/Footer/index';
 function App() {
   return (
     <Router>
+      <Nav />
       <div className="App">
-        <h1 className='text-red'>youuuuu </h1>
-        <Nav />
         <main>
           <Switch>
               <Route exact path="/" component={Home} />
