@@ -27,8 +27,8 @@ type Product {
   numReviews: Int
   countInStock: Int
   price: Float
-  category: Category
-  isFeature: Boolean
+  category: String
+  isFeatured: Boolean
 }
 
 type Order {
@@ -58,6 +58,7 @@ type User {
     users: [User]
     user: User
     categories: [Category]
+    allProducts: [Product]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     order(_id: ID!): Order

@@ -44,6 +44,9 @@ const resolvers = {
       },
 
           // test product with dummy data
+      allProducts: async () => {
+        return Product.find();
+      },
       products: async (parent, { category, name }) => {
         const params = {};
 
@@ -119,18 +122,21 @@ const resolvers = {
   
         return { token, user };
       },
-    //   addOrder: async (parent, { products }, context) => {
-    //     console.log(context);
-    //     if (context.user) {
-    //       const order = new Order({ products });
+    addOrder: async (parent, { products }, context) => {
+      console.log(context);
+      if (context.user) {
+        const order = new Order({ products });
+
+        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+
+        return order;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+
   
-    //       await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-  
-    //       return order;
-    //     }
-  
-    //     throw new AuthenticationError('Not logged in');
-    //   },
+
     //   updateUser: async (parent, args, context) => {
     //     if (context.user) {
     //       return await User.findByIdAndUpdate(context.user._id, args, { new: true });
@@ -138,28 +144,30 @@ const resolvers = {
   
     //     throw new AuthenticationError('Not logged in');
     //   },
-    //   updateProduct: async (parent, { _id, quantity }) => {
-    //     const decrement = Math.abs(quantity) * -1;
+      updateProduct: async (parent, { _id, quantity }) => {
+        const decrement = Math.abs(quantity) * -1;
   
-    //     return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-    //   },
-    //   login: async (parent, { email, password }) => {
-    //     const user = await User.findOne({ email });
+        return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+      },
+      login: async (parent, { email, password }) => {
+      
+        const user = await User.findOne({ email });
   
-    //     if (!user) {
-    //       throw new AuthenticationError('Incorrect credentials');
-    //     }
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
   
-    //     const correctPw = await user.isCorrectPassword(password);
+        const correctPw = await user.isCorrectPassword(password);
   
-    //     if (!correctPw) {
-    //       throw new AuthenticationError('Incorrect credentials');
-    //     }
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
   
-    //     const token = signToken(user);
+        const token = signToken(user);
   
-    //     return { token, user };
+        return { token, user };
       }
+    },
   
   };
   
