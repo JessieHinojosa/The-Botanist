@@ -27,7 +27,7 @@ type Product {
   numReviews: Int
   countInStock: Int
   price: Float
-  category: String
+  category: Category
   isFeatured: Boolean
 }
 
@@ -54,13 +54,10 @@ type User {
   }
 
   type Query {
-    me: User
-    users: [User]
-    user: User
     categories: [Category]
-    allProducts: [Product]
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
+    user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
   }
@@ -68,6 +65,7 @@ type User {
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean!): Auth
     addOrder(products: [ID]!): Order
+    addProduct(name: String!, description: String!, image: String, price: Float!, countInStock: Int, isFeatured: Boolean!): Product
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth

@@ -76,11 +76,12 @@ db.once('open', async () => {
 
 
     // create product
+    const caladium = 'caladiums-foliage.jpg'
     const productData = [
         {
-            name: 'test1',
+            name: 'Caladiums',
             description: 'test desc1',
-            image: 'testimag',
+            image: '',
             reviews: [
                 {
                     name: 'test review name',
@@ -88,12 +89,13 @@ db.once('open', async () => {
                 }
             ],
             numReviews: 2,
+            category: categoryData[0],
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            isFeatured: true
         },
         {
-            name: 'test2',
+            name: 'Canna',
             description: 'test review name 2',
             image: '',
             reviews: [
@@ -103,12 +105,13 @@ db.once('open', async () => {
                 },
             ],
             numReviews: 2,
+            category: categoryData[0],
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            isFeatured: true
         },
         {
-            name: 'test3',
+            name: 'Schlumbergera',
             description: 'test review name 3',
             image: '',
             reviews: [
@@ -118,12 +121,13 @@ db.once('open', async () => {
                 },
             ],
             numReviews: 2,
+            category: categoryData[1],
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            isFeatured: true
         },
         {
-            name: 'test4',
+            name: 'Mammillaria',
             description: 'test review name 4',
             image: '',
             reviews: [
@@ -133,13 +137,14 @@ db.once('open', async () => {
                 },
             ],
             numReviews: 2,
+            category: categoryData[1],
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            isFeatured: true
         },
         {
-            name: 'test 5',
-            description: '',
+            name: 'Tulip Irene Parrot',
+            description: 'test description',
             image: '',
             reviews: [
                 {
@@ -150,7 +155,8 @@ db.once('open', async () => {
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            category: categoryData[2],
+            isFeatured: true
         },
         {
             name: 'test 6 ',
@@ -169,7 +175,8 @@ db.once('open', async () => {
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            category: categoryData[2],
+            isFeatured: true
         },
         {
             name: 'test 7',
@@ -184,10 +191,11 @@ db.once('open', async () => {
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            category: categoryData[3],
+            isFeatured: true
         },
         {
-            name: 'test 8',
+            name: 'areca',
             description: '',
             image: '',
             reviews: [
@@ -199,7 +207,8 @@ db.once('open', async () => {
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            isFeature: true
+            category: categoryData[3],
+            isFeatured: true
         },
     ]
     const createdProducts = await Product.collection.insertMany(productData);

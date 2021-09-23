@@ -25,10 +25,9 @@ const Nav = () => {
               <Link to="/signup">Sign-Up</Link>
             </li>    
           </ul> 
-      </nav>
+          </nav>
     </header>
   )
 }
 
 export default Nav;
-
