@@ -72,6 +72,7 @@ db.once('open', async () => {
             outdoor: true
         }
     ]
+    
     const createdCategories = await Category.collection.insertMany(categoryData);
 
 

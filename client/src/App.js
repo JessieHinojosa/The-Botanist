@@ -22,10 +22,12 @@ import Success from './pages/Success';
 import Nav from './components/Nav';
 import Footer from './components/Footer/index';
 
+// Link to GraphQL
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
+// 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
@@ -36,6 +38,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+// 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -47,8 +50,8 @@ function App() {
   return (
     <ApolloProvider client={client} >
     <Router>
-      <Nav />
       <div className="App">
+      <Nav />
         <main>
           <Switch>
               <Route exact path="/" component={Home} />
