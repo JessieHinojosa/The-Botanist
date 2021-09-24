@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <header>
       <nav className="flex justify-between items-center h-22 bg-gray-100 relative shadow-sm font-sans" role="navigation">
-        <Link to="/" className="pl-8">
+        <Link to="/" className="pl-20">
           <img src={logo} alt="name-logo" />
         </Link>
 
@@ -18,12 +18,12 @@ const Nav = () => {
           </svg>
         </div>
 
-        <div className='pr-8 md:block hidden'> 
-          <Link to="categories" className="p-4 text-green-600">Categories</Link>
-          <Link to="/cart" className="p-4 text-green-600 ">Cart</Link>
-          <Link to="/login" className="p-4 text-green-600">Login</Link>
-          <Link to="/signup" className="p-4 text-green-600">Sign-Up</Link>
-          <Link to="/user" className="p-4 text-green-600 bg-gray-200 rounded-full hover:bg-yellow-200
+        <div className='pr-20 md:block hidden'> 
+          <Link to="categories" className="py-4 px-5 text-green-600">Categories</Link>
+          <Link to="/cart" className="py-4 px-5 text-green-600 ">Cart</Link>
+          <Link to="/login" className="py-4 px-5 text-green-600">Login</Link>
+          <Link to="/signup" className="py-4 px-5 text-green-600">Sign-Up</Link>
+          <Link to="/user" className="py-4 px-5 text-green-600 bg-gray-200 rounded-full hover:bg-yellow-200
           ">
             User
           </Link>
