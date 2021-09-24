@@ -21,7 +21,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/',
+  process.env.MONGODB_URI || 'mongodb://localhost/botanistDB',
   {
     useNewUrlParser: true, 
     useUnifiedTopology: true,

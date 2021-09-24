@@ -6,8 +6,6 @@ const { User, Category, Product } = require('../models');
 db.once('open', async () => {
 
     await User.deleteMany({});
-    await Category.deleteMany({});
-    await Product.deleteMany({});
 
 
     // create user data
@@ -43,8 +41,9 @@ db.once('open', async () => {
     const createdUsers = await User.collection.insertMany(userData);
 
     // create category data
+    await Category.deleteMany({});
 
-    const categoryData = [
+    const categories = await Category.insertMany([
 
         {
             name: 'Foliage',
@@ -71,26 +70,18 @@ db.once('open', async () => {
             indoor: true,
             outdoor: true
         }
-    ]
-    
-    const createdCategories = await Category.collection.insertMany(categoryData);
+    ])
 
+    await Product.deleteMany({});
 
     // create product
-    const caladium = 'caladiums-foliage.jpg'
-    const productData = [
+    const products = await Product.insertMany([
         {
             name: 'Caladiums',
             description: 'test desc1',
-            image: '',
-            reviews: [
-                {
-                    name: 'test review name',
-                    commment: ''
-                }
-            ],
+            image: 'lofcsfgvtrg',
             numReviews: 2,
-            category: categoryData[0],
+            category: categories[0]._id,
             price: 0.99,
             countInStock: 25,
             isFeatured: true
@@ -98,15 +89,9 @@ db.once('open', async () => {
         {
             name: 'Canna',
             description: 'test review name 2',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            image: 'srtgtvegsfgew',
             numReviews: 2,
-            category: categoryData[0],
+            category: categories[0]._id,
             price: 0.99,
             countInStock: 25,
             isFeatured: true
@@ -114,15 +99,9 @@ db.once('open', async () => {
         {
             name: 'Schlumbergera',
             description: 'test review name 3',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            image: 'dnbfuyjt',
             numReviews: 2,
-            category: categoryData[1],
+            category: categories[1]._id,
             price: 0.99,
             countInStock: 25,
             isFeatured: true
@@ -130,15 +109,9 @@ db.once('open', async () => {
         {
             name: 'Mammillaria',
             description: 'test review name 4',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            image: ' fzdvsfv',
             numReviews: 2,
-            category: categoryData[1],
+            category: categories[1],
             price: 0.99,
             countInStock: 25,
             isFeatured: true
@@ -146,73 +119,46 @@ db.once('open', async () => {
         {
             name: 'Tulip Irene Parrot',
             description: 'test description',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            image: 'cafrvwstr',
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: categoryData[2],
+            category: categories[2]._id,
             isFeatured: true
         },
         {
             name: 'test 6 ',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-                {
-                    name: '',
-                    commment: ''
-                }
-            ],
+            description: 'bdyrhdt',
+            image: 'bdtyfhbrtb',
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: categoryData[2],
+            category: categories[2]._id,
             isFeatured: true
         },
         {
             name: 'test 7',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            description: 'gbsrbv',
+            image: ' gxdbtyfhed',
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: categoryData[3],
+            category: categories[3]._id,
             isFeatured: true
         },
         {
             name: 'areca',
-            description: '',
-            image: '',
-            reviews: [
-                {
-                    name: '',
-                    commment: ''
-                },
-            ],
+            description: 'bndgfhbt',
+            image: 'bdhnythffd',
             numReviews: 2,
             price: 0.99,
             countInStock: 25,
-            category: categoryData[3],
+            category: categories[3]._id,
             isFeatured: true
         },
-    ]
-    const createdProducts = await Product.collection.insertMany(productData);
+    ]).catch((err) => {
+        console.log(err);
+    })
 
 
     console.log('all done!');

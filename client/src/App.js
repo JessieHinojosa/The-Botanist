@@ -8,6 +8,9 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import store from './utils/store';
+import { Provider } from 'react-redux';
+
 
 
 // Import pages
@@ -51,6 +54,7 @@ function App() {
     <ApolloProvider client={client} >
     <Router>
       <div className="App">
+      <Provider store={store}>
       <Nav />
         <main>
           <Switch>
@@ -63,6 +67,7 @@ function App() {
           </Switch>
         </main>
         <Footer />
+        </Provider>
       </div>
     </Router>
     </ApolloProvider>
