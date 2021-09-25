@@ -58,8 +58,8 @@ db.once('open', async () => {
             outdoor: true
         },
         {
-            name: 'Bulbous',
-            description: 'Growing bulbous plants is easy when choosing the right species. How to care is important to learn and the differences between these and other root systems.',
+            name: 'Succulent',
+            description: 'Cacti and succulents that will thrive in low humidity, high sunlight, and light water environments.',
             indoor: true,
             outdoor: true
         },
@@ -77,19 +77,19 @@ db.once('open', async () => {
     // create product
     const products = await Product.insertMany([
         {
-            name: 'Caladiums',
-            description: 'test desc1',
-            image: 'lofcsfgvtrg',
+            name: 'Bird of Paradise',
+            description: 'Foliage plant',
+            image: 'bird-of-paradise.jpg',
             numReviews: 2,
             category: categories[0]._id,
-            price: 0.99,
+            price: 75.00,
             countInStock: 25,
-            isFeatured: true
+            isFeatured: false
         },
         {
-            name: 'Canna',
-            description: 'test review name 2',
-            image: 'srtgtvegsfgew',
+            name: 'Monstera',
+            description: 'Swiss cheese plant',
+            image: 'monstera.jpg',
             numReviews: 2,
             category: categories[0]._id,
             price: 0.99,
@@ -97,63 +97,63 @@ db.once('open', async () => {
             isFeatured: false
         },
         {
-            name: 'Schlumbergera',
-            description: 'test review name 3',
-            image: 'dnbfuyjt',
+            name: 'Golden Pothos',
+            description: 'Indoor trailing plant',
+            image: 'golden-pothos.jpg',
             numReviews: 2,
             category: categories[1]._id,
-            price: 0.99,
+            price: 15.00,
             countInStock: 25,
-            isFeatured: false
+            isFeatured: true
         },
         {
-            name: 'Mammillaria',
-            description: 'test review name 4',
-            image: ' fzdvsfv',
+            name: 'Sansevieria',
+            description: 'Snake Plant',
+            image: 'sansevieria-2.jpg',
             numReviews: 2,
             category: categories[1],
-            price: 0.99,
+            price: 13.00,
             countInStock: 25,
-            isFeatured: false
-        },
-        {
-            name: 'Tulip Irene Parrot',
-            description: 'test description',
-            image: 'cafrvwstr',
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: categories[2]._id,
-            isFeatured: false
-        },
-        {
-            name: 'test 6 ',
-            description: 'bdyrhdt',
-            image: 'bdtyfhbrtb',
-            numReviews: 2,
-            price: 0.99,
-            countInStock: 25,
-            category: categories[2]._id,
             isFeatured: true
         },
         {
-            name: 'test 7',
-            description: 'gbsrbv',
-            image: ' gxdbtyfhed',
+            name: 'Rubber Plant',
+            description: 'no idea ',
+            image: 'rubber-plant.jpg',
             numReviews: 2,
-            price: 0.99,
+            price: 25.00,
             countInStock: 25,
             category: categories[3]._id,
             isFeatured: true
         },
         {
-            name: 'areca',
-            description: 'bndgfhbt',
-            image: 'bdhnythffd',
+            name: 'Lemon Eucalyptus',
+            description: 'testing eucalyptus',
+            image: 'lemon-eucalyptus.jpg',
             numReviews: 2,
-            price: 0.99,
+            price: 11.50,
             countInStock: 25,
             category: categories[3]._id,
+            isFeatured: true
+        },
+        {
+            name: 'Echeveria',
+            description: 'succulent',
+            image: 'echeveria.jpg',
+            numReviews: 2,
+            price: 4.99,
+            countInStock: 25,
+            category: categories[2]._id,
+            isFeatured: true
+        },
+        {
+            name: 'Succulent',
+            description: 'another succulent',
+            image: 'succulent.jpg',
+            numReviews: 2,
+            price: 3.99,
+            countInStock: 25,
+            category: categories[2]._id,
             isFeatured: false
         },
     ]).catch((err) => {

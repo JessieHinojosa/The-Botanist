@@ -42,19 +42,21 @@ function ProductItem(item) {
   };
   
     return (
-    <div className="card px-1 py-1">
+    <div className="px-1 py-1">
       <Link to={`/products/${_id}`}>
         <img
           alt={name}
           src={`/images/${image}`}
         />
-        <p>{name}</p>
       </Link>
-      <div>
-        <div>{countInStock} {pluralize("item", countInStock)} in stock</div>
-        <span>${price}</span>
+      <div className="grid grid-cols-3 gap-2">
+        <p className="font-bold text-xl col-span-2">{name}</p>
+        <button onClick={addToCart} className="bg-green-500 py-2 px-5 rounded-b-lg text-white hover:bg-green-800 focus:ring-1 focus:ring-green-800 ">Add to cart</button>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <div className="grid grid-cols-3 gap-2">
+        <p>${price}</p> 
+        <p>{countInStock}  in stock</p>
+      </div>
     </div>
   );
 }

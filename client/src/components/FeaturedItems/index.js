@@ -42,7 +42,7 @@ const FeaturedItems = () => {
       return state.products.filter(product => product.isFeatured === true);
     }
       return (
-        <section>
+        <div className=" px-8 pb-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-20">
         {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
@@ -53,10 +53,7 @@ const FeaturedItems = () => {
               countInStock={product.countInStock}
             />
           ))}
-
-         
-            
-        </section>
+        </div>
     )
 }
 

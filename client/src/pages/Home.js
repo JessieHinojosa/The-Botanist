@@ -9,7 +9,7 @@ const Home = () => {
     {/* <CategoryMenu /> */}
     {/* <ProductList /> */}
     <Hero />
-    <Cart /> 
+    {/* <Cart />  */}
     <FeaturedItems />
   </div>
   );
