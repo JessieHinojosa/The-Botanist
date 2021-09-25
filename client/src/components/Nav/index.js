@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import logo from '../../assets/icons/logo_red_on_white_horizontal_2.jpg'
+import logo from '../../assets/icons/vector-logo.png'
 
 // to add animation class: "transition duration-300 ease-in-out flex items-center animate-bounce"
 
 const Nav = ({toggleDropdown}) => {
   return (
     <header>
-      <nav className="flex justify-between items-center h-22 bg-yellow-50 bg-opacity-25 relative font-sans" role="navigation">
-        <Link to="/" className="pl-24">
+      <nav className="flex justify-between items-center h-22 bg-gray-300 bg-opacity-25 relative font-sans" role="navigation">
+        <Link to="/" className="pl-24 py-2">
           <img src={logo} alt="name-logo" />
         </Link>
 
@@ -19,11 +19,11 @@ const Nav = ({toggleDropdown}) => {
         </div>
 
         <div className='pr-24 md:block hidden'> 
-          <Link to="categories" className="py-4 px-4 text-green-800 font-medium">Categories</Link>
-          <Link to="/cart" className="py-4 px-4 text-green-800 font-medium">Cart</Link>
-          <Link to="/login" className="py-4 px-4 text-green-800 font-medium">Login</Link>
-          <Link to="/signup" className="py-4 px-4 text-green-800 font-medium">Sign-Up</Link>
-          <Link to="/user" className="py-4 px-4 text-green-800 bg-gray-200 rounded-full hover:bg-yellow-200 font-medium">
+          <Link to="categories" className="py-4 px-4 text-green-800 hover:underline font-medium">Products</Link>
+          <Link to="/cart" className="py-4 px-4 text-green-800 hover:underline font-medium">Cart</Link>
+          <Link to="/login" className="py-4 px-4 text-green-800 hover:underline font-medium">Login</Link>
+          <Link to="/signup" className="py-4 px-4 text-green-800 hover:underline font-medium">Sign-Up</Link>
+          <Link to="/user" className="py-4 px-4 text-green-800 hover:underline font-medium">
             User
           </Link>
         </div>

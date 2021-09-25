@@ -56,6 +56,7 @@ const Cart = () => {
       });
     }
 
+    // CART ICON
     if (!state.cartOpen) {
     return (
         <div className="cart-closed" onClick={toggleCart}>
@@ -65,6 +66,7 @@ const Cart = () => {
         </div>
     );
     }
+    
   return (
 <div className="cart">
   <div className="close" onClick={toggleCart}>[close]</div>
