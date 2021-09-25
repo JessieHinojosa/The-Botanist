@@ -38,6 +38,7 @@ function ProductList() {
       });
     }
   }, [data, loading, dispatch]);  
+
   function filterProducts() {
     console.log(state);
     if (!currentCategory) {
@@ -45,8 +46,9 @@ function ProductList() {
     }
     return state.products.filter(product => product.category._id === currentCategory);
   }
+  
     return (
-    <div className="my-2">
+    <div className="my-8">
       <h2>Our Products:</h2>
       {state.products.length ? (
         <div className="flex-row">
@@ -61,8 +63,8 @@ function ProductList() {
             />
           ))}
         </div>
-       ) : (
-        <h3>You haven't added any products yet!</h3>
+      ) : (
+        <h3>Looks like we're out of stock!</h3>
       )} 
       {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
     </div>

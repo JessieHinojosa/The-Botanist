@@ -42,14 +42,14 @@ function CategoryMenu() {
   };
 
 return (
-  <div className="flex justify-between items-center h-10 bg-green-800 relative shadow-sm font-sans">
-    <h2 className="text-white font-semibold">Indoor Plants</h2>
+  <div className="flex justify-center items-center h-12 bg-green-800 relative shadow-sm font-sans">
     {categories.map(item => (
       <button
         key={item._id}
         onClick={() => {
           handleClick(item._id);
         }}
+        className="text-white font-semibold px-4 mx-5"
       >
         {item.name}
       </button>

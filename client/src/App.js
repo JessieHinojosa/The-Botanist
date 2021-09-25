@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import {
@@ -51,13 +51,19 @@ const client = new ApolloClient({
 
 
 function App() {
+  const [isOpen, setIsOpen ] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <ApolloProvider client={client} >
     <Router>
       <div className="App">
       <Provider store={store}>
-      <Nav />
-      <Dropdown />
+      <Nav toggleDropdown={toggleDropdown} />
+      <Dropdown isOpen={isOpen} toggleDropdown={toggleDropdown} />
         <main>
           <Switch>
               <Route exact path="/" component={Home} />
