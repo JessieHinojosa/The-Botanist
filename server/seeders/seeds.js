@@ -94,7 +94,7 @@ db.once('open', async () => {
             category: categories[0]._id,
             price: 0.99,
             countInStock: 25,
-            isFeatured: true
+            isFeatured: false
         },
         {
             name: 'Schlumbergera',
@@ -104,7 +104,7 @@ db.once('open', async () => {
             category: categories[1]._id,
             price: 0.99,
             countInStock: 25,
-            isFeatured: true
+            isFeatured: false
         },
         {
             name: 'Mammillaria',
@@ -114,7 +114,7 @@ db.once('open', async () => {
             category: categories[1],
             price: 0.99,
             countInStock: 25,
-            isFeatured: true
+            isFeatured: false
         },
         {
             name: 'Tulip Irene Parrot',
@@ -124,7 +124,7 @@ db.once('open', async () => {
             price: 0.99,
             countInStock: 25,
             category: categories[2]._id,
-            isFeatured: true
+            isFeatured: false
         },
         {
             name: 'test 6 ',
@@ -154,7 +154,7 @@ db.once('open', async () => {
             price: 0.99,
             countInStock: 25,
             category: categories[3]._id,
-            isFeatured: true
+            isFeatured: false
         },
     ]).catch((err) => {
         console.log(err);
