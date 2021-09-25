@@ -23,10 +23,10 @@ type Product {
   _id: ID
   name: String
   description: String
+  price: Float
   image: String
   numReviews: Int
   countInStock: Int
-  price: Float
   category: Category
   isFeatured: Boolean
 }

@@ -7,7 +7,8 @@ import {
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
-    TOGGLE_CART
+    TOGGLE_CART,
+    USER_LOGIN,
   } from "./actions";
   import { useReducer } from 'react';
   
@@ -73,6 +74,9 @@ import {
           ...state,
           cartOpen: !state.cartOpen
         };
+      // case  USER_LOGIN: 
+      //    return {},
+    
         
       // if it's none of these actions, do not update state at all and keep things the same!
       default:
