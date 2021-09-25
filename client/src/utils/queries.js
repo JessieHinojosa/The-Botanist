@@ -7,7 +7,6 @@ export const QUERY_PRODUCTS = gql`
       name
       description
       price
-      reviews
       numReviews
       countInStock
       image

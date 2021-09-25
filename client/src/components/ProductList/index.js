@@ -16,12 +16,13 @@ function ProductList() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   
   useEffect(() => {
+    console.log(data);
     if(data) {
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
       });
-  
+      
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });
@@ -38,10 +39,10 @@ function ProductList() {
     }
   }, [data, loading, dispatch]);  
   function filterProducts() {
+    console.log(state);
     if (!currentCategory) {
       return state.products;
     }
-  
     return state.products.filter(product => product.category._id === currentCategory);
   }
     return (
@@ -60,9 +61,9 @@ function ProductList() {
             />
           ))}
         </div>
-      ) : (
+       ) : (
         <h3>You haven't added any products yet!</h3>
-      )}
+      )} 
       {/* {loading ? <img src={spinner} alt="loading" /> : null} */}
     </div>
   );
