@@ -41,8 +41,8 @@ function CategoryMenu() {
   };
 
 return (
-  <div>
-    <h2>Choose a Category:</h2>
+  <div className="flex justify-between items-center h-10 bg-green-800 relative shadow-sm font-sans">
+    <h2 className="text-white font-semibold">Indoor Plants</h2>
     {categories.map(item => (
       <button
         key={item._id}

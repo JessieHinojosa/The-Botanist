@@ -23,6 +23,7 @@ import Success from './pages/Success';
 
 // Import components
 import Nav from './components/Nav';
+import Dropdown from './components/Dropdown';
 import Footer from './components/Footer/index';
 
 // Link to GraphQL
@@ -56,6 +57,7 @@ function App() {
       <div className="App">
       <Provider store={store}>
       <Nav />
+      <Dropdown />
         <main>
           <Switch>
               <Route exact path="/" component={Home} />

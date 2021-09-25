@@ -7,7 +7,7 @@ import logo from '../../assets/icons/logo_red_on_white_horizontal_2.jpg'
 const Nav = () => {
   return (
     <header>
-      <nav className="flex justify-between items-center h-22 bg-gray-100 relative shadow-sm font-sans" role="navigation">
+      <nav className="flex justify-between items-center h-22 bg-gray-100 relative font-sans" role="navigation">
         <Link to="/" className="pl-20">
           <img src={logo} alt="name-logo" />
         </Link>
@@ -23,8 +23,7 @@ const Nav = () => {
           <Link to="/cart" className="py-4 px-5 text-green-600 ">Cart</Link>
           <Link to="/login" className="py-4 px-5 text-green-600">Login</Link>
           <Link to="/signup" className="py-4 px-5 text-green-600">Sign-Up</Link>
-          <Link to="/user" className="py-4 px-5 text-green-600 bg-gray-200 rounded-full hover:bg-yellow-200
-          ">
+          <Link to="/user" className="py-4 px-5 text-green-600 bg-gray-200 rounded-full hover:bg-yellow-200">
             User
           </Link>
         </div>
