@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "dotenv": "^10.0.0"
   },
   "devDependencies": {

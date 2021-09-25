@@ -16,7 +16,6 @@ const FeaturedItems = () => {
     const { loading, data } = useQuery(QUERY_PRODUCTS);
     
     useEffect(() => {
-      console.log(data);
       if(data) {
         dispatch({
           type: UPDATE_PRODUCTS,

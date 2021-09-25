@@ -30,7 +30,12 @@ type Product {
   category: Category
   isFeatured: Boolean
 }
-
+type shippingAddress {
+  address: String
+  city: String
+  postalCode: Int
+  country: String
+}
 type Order {
   _id: ID
   purchaseDate: String
@@ -44,6 +49,7 @@ type User {
   _id: ID
   firstName: String
   lastName: String
+  shippingAddress: shippingAddress
   email: String
   isAdmin: Boolean
   orders: [Order]
@@ -63,7 +69,7 @@ type User {
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean): Auth
     addOrder(products: [ID]!): Order
     addProduct(name: String!, description: String!, image: String, price: Float!, countInStock: Int, isFeatured: Boolean!): Product
     updateUser(firstName: String, lastName: String, email: String, password: String): User
