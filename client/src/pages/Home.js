@@ -2,13 +2,15 @@ import React from "react";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from '../components/Cart';
 import ProductList from "../components/ProductList";
+import FeaturedItems from "../components/FeaturedItems";
 
 const Home = () => {
   return (
   <div className="container">
-    <CategoryMenu />
+    {/* <CategoryMenu />
     <ProductList />
-    <Cart />
+    <Cart /> */}
+    <FeaturedItems />
   </div>
   );
 };

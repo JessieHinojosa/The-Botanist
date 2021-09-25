@@ -1,16 +1,12 @@
 import React from 'react'
+import CategoryMenu from '../components/CategoryMenu'
+import ProductList from '../components/ProductList'
 
 const Categories = () => {
     return (
         <section>
-            <aside>
-              <h2>Outdoor</h2>
-              {/* for sub categories */}
-            </aside>
-            <aside>
-              <h2>Indoor</h2>
-             {/* for sub categories */}
-            </aside>
+           <CategoryMenu />
+           <ProductList />
 
             
         </section>
