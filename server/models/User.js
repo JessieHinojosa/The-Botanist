@@ -5,12 +5,12 @@ const bcrypt = require('bcrypt');
 const Order = require('./Order');
 
 
-// const addrressSchema = mongoose.Schema({
-//   address: {type: String, required: true},
-//   city: {type: String, required: true},
-//   postalCode: {type: Number, required: true},
-//   country: {type: String, required: true},
-// })
+const addressSchema = mongoose.Schema({
+  address: {type: String, required: true},
+  city: {type: String, required: true},
+  postalCode: {type: Number, required: true},
+  country: {type: String, required: true},
+})
 
 const userSchema = new Schema({
     firstName: {
@@ -29,6 +29,7 @@ const userSchema = new Schema({
       unique: true,
       match: [/.+@.+\..+/, 'Must match an email address!']
     },
+    shippingAddress: addressSchema,
     password: {
       type: String,
       required: true,

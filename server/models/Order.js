@@ -8,7 +8,7 @@ const orderSchema = new Schema({
         required: true,
         ref: 'User'
     },
-    orderItems: [{
+    order: [{
         name: {type: String, required: true},
         qty: {type: Number, required: true},
         image: {type: String, required: true},
@@ -67,7 +67,7 @@ const orderSchema = new Schema({
     deliveredAt : {
         type: Date
     },
-    orderItems: [
+    products: [
         {
         type: Schema.Types.ObjectId,
         ref: 'Product'
