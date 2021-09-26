@@ -30,29 +30,37 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
+    <div className="">
+    <div className="flex items-center justify-center h-screen bg-gray-700">
+      <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
+        <h2 className="text-3xl font-bold mb-10 text-red-700">Login to Your Account</h2>
 
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
+      <form onSubmit={handleFormSubmit} className="space-y-6">
+        <div>
+          <label htmlFor="email" className="mr-2 font-medium block">
+            Email
+            </label>
           <input
             placeholder="youremail@test.com"
             name="email"
             type="email"
             id="email"
             onChange={handleChange}
+            className="border-2 border-gray-200 outline-none focus:border-green-500 rounded p-2 w-full"
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+
+        <div>
+          <label htmlFor="pwd" className="mr-2 font-medium block">
+            Password
+          </label>
           <input
             placeholder="******"
             name="password"
             type="password"
             id="pwd"
             onChange={handleChange}
+            className="border-2 border-gray-200 outline-none focus:border-green-500 rounded p-2 w-full"
           />
         </div>
         {error ? (
@@ -61,9 +69,11 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button type="submit" className="bg-green-700 text-white rounded w-full hover:bg-green-500 py-3">Submit</button>
         </div>
       </form>
+      </div>
+    </div>
     </div>
   );
 }

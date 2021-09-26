@@ -10,34 +10,26 @@ const Nav = ({toggleDropdown}) => {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
+        <>
+          <Link to="/account" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">
+            Account
+          </Link>
+          {/* this is not using the Link component to logout our user and then refresh the application to the start */}
+          <a href="/" onClick={() => Auth.logout()} className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">
+            Logout
+          </a>
+        </>
       );
     } else {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
-          </li>
-        </ul>
+        <>
+          <Link to="/login" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">
+            Login
+          </Link>
+          <Link to="/signup" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">
+            Sign-Up
+          </Link>
+        </>
       );
     }
   }
@@ -56,11 +48,9 @@ const Nav = ({toggleDropdown}) => {
         </div>
 
         <div className='pr-24 md:block hidden'> 
-          <Link to="categories" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Products</Link>
+          <Link to="/categories" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Products</Link>
           <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link>
-          <Link to="/login" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Login</Link>
-          <Link to="/signup" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Sign-Up</Link>
-          <Link to="/user" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">User</Link>
+          {showNavigation()}
         </div>
       </nav>
     </header>
