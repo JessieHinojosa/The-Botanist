@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-import Signup from './Signup';
+// import { Link } from 'react-router-dom';
+// import Signup from './Signup';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -32,7 +32,9 @@ function Login(props) {
 
   return (
     <div className="">
-      <Signup />
+      {/* remove <Signup /> component for link to signup page */}
+      {/* <Link to="/signup">← Go to Signup</Link> */}
+      {/* <Signup /> */}
     <div className="flex items-center justify-center h-screen bg-gray-700">
       <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
         <h2 className="text-3xl font-bold mb-10 text-red-700">Login to Your Account</h2>
@@ -57,7 +59,7 @@ function Login(props) {
             Password
           </label>
           <input
-            placeholder="******"
+            placeholder="********"
             name="password"
             type="password"
             id="pwd"
