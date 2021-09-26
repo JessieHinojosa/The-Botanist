@@ -45,7 +45,6 @@ type User {
   firstName: String
   lastName: String
   email: String
-  isAdmin: Boolean
   orders: [Order]
 }
   type Auth {
@@ -63,7 +62,7 @@ type User {
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!, isAdmin: Boolean!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     addProduct(name: String!, description: String!, image: String, price: Float!, countInStock: Int, isFeatured: Boolean!): Product
     updateUser(firstName: String, lastName: String, email: String, password: String): User

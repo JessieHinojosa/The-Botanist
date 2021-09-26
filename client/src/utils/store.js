@@ -9,7 +9,7 @@ const initialState = {
   cart: [],
   cartOpen: false,
   categories: [],
-  currentCategory: ''
+  currentCategory: '',
 }
 
 export default createStore(reducer, initialState, composeWithDevTools(applyMiddleware()))
