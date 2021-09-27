@@ -8,8 +8,8 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { useSelector, useDispatch } from 'react-redux'
 import './style.css';
 
-// import { loadStripe } from '@stripe/stripe-js';
-// const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 
 const Cart = () => {
@@ -30,9 +30,9 @@ const Cart = () => {
 
   useEffect(() => {
     if (data) {
-      // stripePromise.then((res) => {
-      //   res.redirectToCheckout({ sessionId: data.checkout.session });
-      // });
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
     }
   }, [data]);
 
