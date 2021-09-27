@@ -49,8 +49,8 @@ const Nav = ({toggleDropdown}) => {
 
         <div className='pr-24 md:block hidden'> 
           <Link to="/categories" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Products</Link>
-          <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link>
           {showNavigation()}
+          <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link>
         </div>
       </nav>
     </header>

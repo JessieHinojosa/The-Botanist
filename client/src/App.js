@@ -20,6 +20,10 @@ import Detail from './pages/Detail';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Success from './pages/Success';
+import Account from './pages/Account';
+import AccountDetails from './pages/AccountDetails';
+import OrderHistory from './pages/OrderHistory';
+import NoMatch from './pages/NoMatch';
 
 // Import components
 import Nav from './components/Nav';
@@ -71,7 +75,11 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
+              <Route exact path="/account" component={Account} />
+              <Route exact path="/account-details" component={AccountDetails} />
+              <Route exact path="/orderhistory" component={OrderHistory} />
               <Route exact path="/success" component={Success} />
+              <Route component={NoMatch} />
           </Switch>
         </main>
         <Footer />
