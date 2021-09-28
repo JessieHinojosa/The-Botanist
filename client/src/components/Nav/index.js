@@ -35,8 +35,8 @@ const Nav = ({toggleDropdown}) => {
   }
 
   return (
-    <header>
-      <nav className="flex justify-between items-center h-22 bg-gray-100  relative font-sans" role="navigation">
+    <header className="sticky top-0">
+      <nav className=" flex justify-between items-center h-22 bg-gray-100  relative font-sans" role="navigation">
         <Link to="/" className="pl-24 py-2">
           <img src={logo} alt="name-logo" />
         </Link>
@@ -50,7 +50,7 @@ const Nav = ({toggleDropdown}) => {
         <div className='pr-24 md:block hidden'> 
           <Link to="/categories" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Products</Link>
           {showNavigation()}
-          <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link>
+          {/* <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link> */}
         </div>
       </nav>
     </header>
