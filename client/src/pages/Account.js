@@ -15,11 +15,11 @@ function Account() {
         user = data.user;
     }
 
+
     return (
         <div className="lg:px-60 md:px-36 sm:px-20">
             <AccountNav />
 
-            
         
         </div>
     );
