@@ -65,18 +65,24 @@ const Cart = () => {
   // CART ICON
   if (!state.cartOpen) {
     return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span
+      <div className="cart-closed " onClick={toggleCart}>
+        {/* Heroicon Cart Icon */}
+        <div className="bg-yellow-400 rounded">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        </div>
+        {/* <span
         role="img"
         aria-label="trash">
           🛒
-        </span>
+        </span> */}
       </div>
     );
   }
 
   return (
-    <div className="cart">
+    <div className="cart fixed  bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
       <div className="close" onClick={toggleCart}>[close]</div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
