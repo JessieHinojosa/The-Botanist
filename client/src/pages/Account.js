@@ -2,29 +2,21 @@ import React, { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
-import { useSelector, useDispatch } from 'react-redux'
 
 import AccountNav from '../components/AccountNav';
 
 function Account() {
-    const state = useSelector(state => state);
-    const dispatch = useDispatch();
-    
-    
+    // return components for updating Account and order history
     const { data } = useQuery(QUERY_USER);
-    
-    useEffect(() => {
-      if(data) {
-          console.log(data);
-      }
-      console.log('query failed');
-    }, [data]);  
-      return (
+    let user;
+    if (data) {
+        user = data.user;
+        console.log(user);
+    }
+    return (
         <div className="lg:px-60 md:px-36 sm:px-20">
             <AccountNav />
-
-            
-        
+            <h2>Welcome {user.firstName} {user.lastName} </h2>
         </div>
     );
 }
