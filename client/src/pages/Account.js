@@ -8,7 +8,7 @@ import AccountNav from '../components/AccountNav';
 function Account() {
     // return components for updating Account and order history
     const { data } = useQuery(QUERY_USER);
-    let user;
+        let user;
     if (data) {
         user = data.user;
     }
@@ -17,12 +17,10 @@ function Account() {
             <AccountNav />
             {user ? (
                 <>
-                    <h2>
-                    Hello!!!! {user.firstName} {user.lastName} Your a rockstar
-                    </h2>
-
+                <h1>{user.firstName} {user.lastName}</h1>
                 </>
                 ) : null}
+
         </div>
     );
 }

@@ -19,6 +19,7 @@ type Category {
   indoor: Boolean
   outdoor: Boolean
 }
+
 type Product {
   _id: ID
   name: String
@@ -40,6 +41,7 @@ type Order {
 type Checkout {
   session: ID
 }
+
 type User {
   _id: ID
   firstName: String
@@ -47,10 +49,11 @@ type User {
   email: String
   orders: [Order]
 }
-  type Auth {
-    token: ID
-    user: User
-  }
+
+type Auth {
+  token: ID
+  user: User
+}
 
   type Query {
     categories: [Category]
