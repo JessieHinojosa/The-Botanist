@@ -54,14 +54,9 @@ export const QUERY_CATEGORIES = gql`
 export const QUERY_USER = gql`
   {
     user {
+      _id
       firstName
       lastName
-      shippingAddress {
-        address
-        city
-        postalCode
-        country
-      }
       orders {
         _id
         purchaseDate
@@ -70,8 +65,8 @@ export const QUERY_USER = gql`
           name
           description
           price
-          quantity
           image
+          countInStock
         }
       }
     }

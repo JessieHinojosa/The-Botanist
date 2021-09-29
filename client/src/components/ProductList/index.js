@@ -16,7 +16,6 @@ function ProductList() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   
   useEffect(() => {
-    console.log(data);
     if(data) {
       dispatch({
         type: UPDATE_PRODUCTS,
@@ -40,7 +39,6 @@ function ProductList() {
   }, [data, loading, dispatch]);  
 
   function filterProducts() {
-    console.log(state);
     if (!currentCategory) {
       return state.products;
     }

@@ -44,4 +44,4 @@ const Success = () => {
     );
 }
 
-export default Success
+ export default Success
