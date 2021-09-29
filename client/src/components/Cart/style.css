@@ -34,7 +34,7 @@
   .cart-closed {
     position: fixed;
     top: 2%;
-    right: 1%;
+    right: 3%;
     font-size: 2rem;
     cursor: pointer;
     background-color: var(--secondary);
@@ -44,8 +44,8 @@
     height: 50px;
   }
   
-  .cart-closed:hover {
-    transform: rotate(8deg);
+  .cartIcon:hover {
+    transform: rotate(-13deg);
   }
   
   .cart img {
@@ -61,15 +61,11 @@
   
   @media screen and (max-width: 768px) {
     .cart {
-      position: relative;
       max-width: 100%;
       max-height: auto;
-      box-shadow: none;
-      background-color: inherit;
     }
   
     .cart-closed {
-      position: relative;
       margin: 0 auto;
     }
   }
