@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
@@ -11,12 +11,18 @@ function Account() {
     let user;
     if (data) {
         user = data.user;
-        console.log(user);
     }
     return (
         <div className="lg:px-60 md:px-36 sm:px-20">
             <AccountNav />
-            <h2>Welcome {user.firstName} {user.lastName} </h2>
+            {user ? (
+                <>
+                    <h2>
+                    Hello!!!! {user.firstName} {user.lastName} Your a rockstar
+                    </h2>
+
+                </>
+                ) : null}
         </div>
     );
 }
