@@ -18,10 +18,10 @@ db.once('open', async () => {
         const firstName = faker.name.firstName();
         const lastName = faker.name.lastName();
         const shippingAddress = {
-            address: faker.address.streetAddress(),
-            city: faker.address.cityName(),
-            postalCode: faker.address.zipCode(),
-            country: faker.address.country()
+            address: 'faker.address.streetAddress()',
+            city: 'faker.address.cityName()',
+            postalCode: 36459,
+            country: 'faker.address.country()'
         };
         const isAdmin = false;
 

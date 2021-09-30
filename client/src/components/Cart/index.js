@@ -7,7 +7,6 @@ import { QUERY_CHECKOUT } from '../../utils/queries';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { useSelector, useDispatch } from 'react-redux'
 import './style.css';
-
 import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
