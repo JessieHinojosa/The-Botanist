@@ -54,13 +54,36 @@
   background-color: rgba(240, 240, 240, 0.753);
 }
 
+@media screen and (max-width: 1650px) {
+  .cart {
+    max-width: 30%;
+    max-height: 70%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .cart {
+    max-width: 35%;
+    max-height: 70%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .cart {
+    max-width: 40%;
+    max-height: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cart {
+    max-width: 50%;
+    max-height: 70%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .cart {
     max-width: 100%;
-    max-height: auto;
-  }
-
-  .cart-closed {
-    margin: 0 auto;
   }
 }

@@ -37,11 +37,11 @@ const Nav = ({toggleDropdown}) => {
   return (
     <header className="sticky top-0 z-30">
       <nav className=" flex justify-between items-center h-22 bg-gray-100  relative font-sans" role="navigation">
-        <Link to="/" className="pl-24 py-2">
+        <Link to="/" className="sm:pl-4 md:pl-4 lg:pl-16 w-96  py-2">
           <img src={logo} alt="name-logo" />
         </Link>
 
-        <div className='px-4 cursor-pointer md:hidden' onClick={toggleDropdown}> 
+        <div className='pr-24 cursor-pointer md:hidden' onClick={toggleDropdown}> 
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -50,7 +50,6 @@ const Nav = ({toggleDropdown}) => {
         <div className='pr-24 md:block hidden'> 
           <Link to="/categories" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Products</Link>
           {showNavigation()}
-          {/* <Link to="/cart" className="py-4 px-4 text-red-800 hover:underline font-medium text-xl">Cart</Link> */}
         </div>
       </nav>
     </header>
