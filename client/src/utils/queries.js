@@ -31,8 +31,6 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
         description
-        indoor
-        outdoor
       }
       isFeatured
     }
@@ -45,8 +43,6 @@ export const QUERY_CATEGORIES = gql`
       _id
       name
       description
-      indoor
-      outdoor
     }
   }
 `;

@@ -17,19 +17,12 @@ db.once('open', async () => {
         const password = faker.internet.password();
         const firstName = faker.name.firstName();
         const lastName = faker.name.lastName();
-        const shippingAddress = {
-            address: 'faker.address.streetAddress()',
-            city: 'faker.address.cityName()',
-            postalCode: 36459,
-            country: 'faker.address.country()'
-        };
         const isAdmin = false;
 
         userData.push(
             {
                 firstName,
                 lastName,
-                shippingAddress,
                 isAdmin,
                 username,
                 email,
