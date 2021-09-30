@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_ORDER } from '../utils/mutations'
 // import idbPromise()
 import { idbPromise } from "../utils/helpers";
+import Cart from '../components/Cart';
 
 const Success = () => {
     // on Success load, read everything saved in indexedDB cart store
@@ -33,6 +34,7 @@ const Success = () => {
 
     return (
         <div>
+            <Cart />
             <h1>Success!</h1>
             <h2>
                 Thank you for your purchase!

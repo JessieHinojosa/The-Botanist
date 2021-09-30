@@ -6,8 +6,8 @@ import FeaturedItems from "../components/FeaturedItems";
 const Home = () => {
   return (
   <div>
-    <Hero />
     <Cart /> 
+    <Hero />
     <FeaturedItems />
   </div>
   );

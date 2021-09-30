@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import Cart from '../components/Cart';
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -31,6 +32,7 @@ function Signup(props) {
 
   return (
     <div className="">
+      <Cart />
     <div className="flex items-center justify-center h-screen bg-gray-700">
       <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
         <h2 className="text-3xl font-bold mb-10 text-red-600">Create Your Account</h2>

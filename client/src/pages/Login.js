@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-// import { Link } from 'react-router-dom';
-// import Signup from './Signup';
+import Cart from '../components/Cart';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -32,6 +31,7 @@ function Login(props) {
 
   return (
     <div className="">
+      <Cart />
       {/* remove <Signup /> component for link to signup page */}
       {/* <Link to="/signup">← Go to Signup</Link> */}
       {/* <Signup /> */}

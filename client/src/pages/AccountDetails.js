@@ -1,7 +1,8 @@
-import AccountNav from '../components/AccountNav'
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../utils/mutations';
+import AccountNav from '../components/AccountNav'
+import Cart from '../components/Cart';
 
 const AccountDetails = () => {
     
@@ -19,7 +20,7 @@ const AccountDetails = () => {
             password: formState.password,
         
         }});
-       console.log(mutationResponse);
+        console.log(mutationResponse);
       };
     
       const handleChange = (event) => {
@@ -31,7 +32,9 @@ const AccountDetails = () => {
       };
     
       return (
-        <div className="">
+        <div className="lg:px-60 md:px-36 sm:px-20">
+          <Cart />
+          <AccountNav />
         <div className="flex items-center justify-center h-screen bg-gray-700">
           <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
             <h2 className="text-3xl font-bold mb-10 text-red-700">Create Your Account</h2>

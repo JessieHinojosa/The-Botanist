@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 import AccountNav from '../components/AccountNav';
+import Cart from '../components/Cart';
 
 function OrderHistory() {
     const { data } = useQuery(QUERY_USER);
@@ -16,7 +17,8 @@ function OrderHistory() {
 
     return (
         <div className="lg:px-60 md:px-36 sm:px-20">
-        <AccountNav />
+            <Cart />
+            <AccountNav />
             <div className="container my-1">
                 <Link to="/">← Back to Products</Link>
 
