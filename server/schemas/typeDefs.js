@@ -5,6 +5,8 @@ type Category {
   _id: ID
   name: String
   description: String
+  indoor: Boolean
+  outdoor: Boolean
 }
 
 type Product {
