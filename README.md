@@ -12,13 +12,13 @@ Link to site: https://the-botanist-project.herokuapp.com/
 ![The-Botanist preview](https://github.com/jayMaverick/The-Botanist/blob/main/client/src/assets/the-botanist-preview.png?raw=true)
 
 ## Description 
-
+The Botanist is an e-commerce site, that simulates a full shopping and checkout process. Users may create an account to make purchases and save the details to review later on in their own account dashboard. 
 
 ## Built With
 * React 
+* Tailwind CSS
 * GraphQL
 * MongoDB
-* Tailwind CSS
 * Express.js
 * Stripe
 
@@ -29,5 +29,5 @@ Link to site: https://the-botanist-project.herokuapp.com/
 3. Add items to cart and checkout securely with Stripe!
 
 ## Contributing
-Kayla Dombrosky - [GitHub](https://github.com/kdombrosky) 
-Jessie Hinojosa - [GitHub](https://github.com/jayMaverick) 
+* Kayla Dombrosky - [GitHub](https://github.com/kdombrosky) 
+* Jessie Hinojosa - [GitHub](https://github.com/jayMaverick) 
