@@ -8,7 +8,7 @@ Link to site: https://the-botanist-project.herokuapp.com/
 * [Usage](#usage)
 * [Contributing](#contributing)
 
-![The-Botanist preview]()
+![The-Botanist preview](https://github.com/jayMaverick/The-Botanist/blob/main/client/src/assets/the-botanist-preview.png?raw=true)
 
 ## Description 
 
