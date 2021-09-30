@@ -3,7 +3,7 @@ import Cart from '../components/Cart';
 
 const NoMatch = () => {
     return (
-        <div className="flex justify-center items-center my-auto">
+        <div className="flex justify-center items-center my-auto h-screen">
             <Cart />
             <h1>404 Page Not Found</h1>
         </div>

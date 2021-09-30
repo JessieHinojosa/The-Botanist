@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import AccountNav from '../components/AccountNav';
@@ -20,7 +21,7 @@ function Account() {
     // const dispatch = useDispatch();
     // const [getCheckout, { checkoutData }] = useLazyQuery(QUERY_CHECKOUT);
     
-  
+
     // return components for updating Account and order history
     const { data } = useQuery(QUERY_USER);
         let user;
@@ -32,7 +33,7 @@ function Account() {
     //       const cart = await idbPromise('cart', 'get');
     //       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     //     };
-      
+
     //     if (!state.cart.length) {
     //       getCart();
     //     }
@@ -45,44 +46,50 @@ function Account() {
     //       });
     //     }
     //   }, [checkoutData]);
+
+
+    // ****WAS INSIDE RETURN STATEMENT****
+    //  <section>
+    //                 <h2>Current Items in Your Cart</h2>
+    //             {state.cart.length ? (
+    //                 <div>
+    //                 {state.cart.map(item => (
+    //                     <CartItem key={item._id} item={item} />
+    //                 ))}
+    //                 <div className="flex-row space-between">
+    //                     <strong>Total: ${calculateTotal()}</strong>
+    //                     {
+    //                     Auth.loggedIn() ?
+    //                         <button onClick={submitCheckout}>
+    //                         Checkout
+    //                         </button>
+    //                         :
+    //                         <span>(log in to check out)</span>
+    //                     }
+    //                 </div>
+    //                 </div>
+    //             ) : (
+    //                 <h3>
+    //                 You haven't added anything to your cart yet!
+    //                 </h3>
+    //             )}
+    //             </section> 
     
     
     return (
-        <div className="lg:px-60 md:px-36 sm:px-20">
+        <div className="lg:px-60 md:px-36 sm:px-20 h-screen mt-8">
             <Cart />
             <AccountNav />
             {user ? (
-                <>
-                <h1>{user.firstName} {user.lastName} {user.email}</h1>
-                <ul>
-                    <li>{user.email}</li>
-                </ul>
-                {/* <section>
-                    <h2>Current Items in Your Cart</h2>
-                {state.cart.length ? (
-                    <div>
-                    {state.cart.map(item => (
-                        <CartItem key={item._id} item={item} />
-                    ))}
-                    <div className="flex-row space-between">
-                        <strong>Total: ${calculateTotal()}</strong>
-                        {
-                        Auth.loggedIn() ?
-                            <button onClick={submitCheckout}>
-                            Checkout
-                            </button>
-                            :
-                            <span>(log in to check out)</span>
-                        }
-                    </div>
-                    </div>
-                ) : (
-                    <h3>
-                    You haven't added anything to your cart yet!
-                    </h3>
-                )}
-                </section> */}
-                </>
+                <div className="flex flex-col items-center pt-10">
+                <h2 className="text-lg font-bold pb-8">Hello {user.firstName} {user.lastName}!</h2>
+                <p className="py-2">Welcome to your user dashboard.</p>
+                <p className="py-2 ">Here you may manage your 
+                <Link to='/account-details' className="underline pl-1">account details</Link>
+                , and view your  
+                <Link to='/orderhistory' className="underline pl-1">order history</Link>.</p>
+                
+                </div>
                 ) : null}
 
         </div>

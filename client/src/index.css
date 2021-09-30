@@ -7,4 +7,6 @@
   width: 26rem;
 }
 
-
+.orderGroup:nth-child(odd) {
+  background-color: rgba(240, 240, 240, 0.753);
+}

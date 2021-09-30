@@ -26,24 +26,20 @@ const Success = () => {
         // relocate to homepage after 3 seconds
         setTimeout(() => {
             window.location.assign('/');
-        }, 3000);
+        }, 5000);
     }
 
     saveOrder();
     }, [addOrder]);
 
     return (
-        <div>
+        <div className="flex flex-col justify-start items-center h-screen">
             <Cart />
-            <h1>Success!</h1>
-            <h2>
-                Thank you for your purchase!
-            </h2>
-            <h2>
-                You will now be redirected to the homepage
-            </h2>
+            <h1 className="pt-20">Success!</h1>
+            <h2>Thank you for your purchase!</h2>
+            <h2>You will now be redirected to the homepage</h2>
         </div>
     );
 }
 
- export default Success
+export default Success
