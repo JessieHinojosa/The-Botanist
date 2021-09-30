@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
-const ShippingAddress = require('./ShippingAddress')
 
 
 
@@ -35,7 +34,6 @@ const userSchema = new Schema({
       default: false
     },
     orders: [Order.schema],
-    shippingAddress: [ShippingAddress.schema],
   }, 
   {
     toJSON: {

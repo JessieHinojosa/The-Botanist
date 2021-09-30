@@ -36,8 +36,8 @@ function Login(props) {
       {/* <Link to="/signup">← Go to Signup</Link> */}
       {/* <Signup /> */}
     <div className="flex items-center justify-center h-screen bg-gray-700">
-      <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
-        <h2 className="text-3xl font-bold mb-10 text-red-700">Login to Your Account</h2>
+      <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2 ">
+        <h2 className="text-3xl font-bold mb-10 text-red-600 ">Login to Your Account</h2>
 
       <form onSubmit={handleFormSubmit} className="space-y-6">
         <div>
@@ -68,12 +68,12 @@ function Login(props) {
           />
         </div>
         {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+          <div className="">
+            <p className="text-gray-400 text-sm font-medium">Could not verify email or password</p>
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <button type="submit" className="bg-green-700 text-white rounded w-full hover:bg-green-500 py-3">Submit</button>
+          <button type="submit" className="bg-green-600 text-white rounded w-full hover:bg-green-500 py-3">Submit</button>
         </div>
       </form>
       </div>

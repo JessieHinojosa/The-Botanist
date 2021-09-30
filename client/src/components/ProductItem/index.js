@@ -42,19 +42,23 @@ function ProductItem(item) {
   
     return (
     <div className="px-1 py-1">
+      <div className="relative">
       <Link to={`/products/${_id}`}>
         <img
           alt={name}
           src={`/images/${image}`}
         />
       </Link>
-      <div className="grid grid-cols-3 gap-2">
-        <p className="font-bold text-xl col-span-2">{name}</p>
-        <button onClick={addToCart} className="bg-green-500 py-2 px-5 rounded-b-lg text-white hover:bg-green-800 focus:ring-1 focus:ring-green-800 ">Add to cart</button>
+      <div className="absolute bottom-2 left-2 ...">
+      <p className="lg:text-xl md:text-lg sm:text-md font-medium bg-yellow-300 p-4 rounded-full">${price}</p> 
       </div>
-      <div className="grid grid-cols-3 gap-2">
-        <p>${price}</p> 
-        <p>{countInStock}  in stock</p>
+      </div>
+      <div className="grid grid-cols-3">
+        <p className="font-bold text-2xl  col-span-2 pt-1 pl-1">{name}</p>
+        <button onClick={addToCart} className="bg-green-500 py-3 px-5 rounded-b-lg text-white hover:bg-green-400 focus:ring-1 focus:ring-green-800 font-medium">Add to cart</button>
+      </div>
+      <div className="flex justify-end">
+        <p className="text-gray-400 font-medium text-sm p-2">{countInStock} in stock</p>
       </div>
     </div>
   );
