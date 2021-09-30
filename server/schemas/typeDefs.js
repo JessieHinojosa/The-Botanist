@@ -1,23 +1,10 @@
 const { gql } = require('apollo-server-express');
-const { GraphQLObjectType, GraphQLString, GraphQLInt } = require('graphql');
-
-// const ShippingAddress = new GraphQLObjectType({
-//   name: 'shippingAddress',
-//   fields: () => ({
-//     address: {type: GraphQLString },
-//     city: {type: GraphQLString },
-//     postalCode: {type: GraphQLInt },
-//     country: {type: GraphQLString },
-//   })
-// })
 
 const typeDefs = gql`
 type Category {
   _id: ID
   name: String
   description: String
-  indoor: Boolean
-  outdoor: Boolean
 }
 
 type Product {

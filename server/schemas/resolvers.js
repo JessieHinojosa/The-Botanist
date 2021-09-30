@@ -53,6 +53,7 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     checkout: async (parent, args, context) => {
+      console.log('running checkout resolver');
       const order = new Order({ products: args.products });
       const url = new URL(context.headers.referer).origin;
       const { products } = await order.populate('products').execPopulate();
