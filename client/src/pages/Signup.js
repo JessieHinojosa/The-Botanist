@@ -34,7 +34,7 @@ function Signup(props) {
     <div className="">
     <div className="flex items-center justify-center h-screen bg-gray-700">
       <div className=" bg-white p-14 rounded shadow-2xl lg:w-1/3 sm:w-1/2">
-        <h2 className="text-3xl font-bold mb-10 text-red-700">Create Your Account</h2>
+        <h2 className="text-3xl font-bold mb-10 text-red-600">Create Your Account</h2>
 
         <form onSubmit={handleFormSubmit} className="space-y-6">
           <div>
@@ -94,7 +94,7 @@ function Signup(props) {
           </div>
 
           <div>
-            <button type="submit" className="bg-green-700 text-white rounded w-full hover:bg-green-500 py-3">Sign Up</button>
+            <button type="submit" className="bg-green-600 text-white rounded w-full hover:bg-green-500 py-3">Sign Up</button>
           </div>
         </form>
       </div>

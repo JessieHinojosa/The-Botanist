@@ -36,17 +36,18 @@ const CartItem = ({ item }) => {
         }
       };
   return (
-    <div className="flex-row">
+    <div className="flex tr p-4 justify-between">
       <div>
         <img
           src={`/images/${item.image}`}
-          alt=""
+          alt="product"
         />
       </div>
+
       <div>
-        <div>{item.name}, ${item.price}</div>
+        <div className="font-medium text-lg">{item.name} | ${item.price}</div>
         <div>
-          <span>Qty:</span>
+          <span className="font-medium">Qty: </span>
           <input
             type="number"
             placeholder="1"
