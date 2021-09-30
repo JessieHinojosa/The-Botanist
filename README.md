@@ -17,7 +17,7 @@
 ![The-Botanist preview](https://github.com/jayMaverick/The-Botanist/blob/main/client/src/assets/the-botanist-preview.png?raw=true)
 
 ## Description 
-The Botanist is an e-commerce site, that simulates a full shopping and checkout process. Users may create an account to make purchases and save the details to review later on in their own account dashboard. 
+The Botanist is a full-stack e-commerce site, that simulates a complete shopping experience and checkout process. Users may create an account to make purchases and save the details to review later on in their own account dashboard. 
 
 ## Built With
 * React 
