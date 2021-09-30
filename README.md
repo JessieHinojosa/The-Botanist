@@ -1,7 +1,12 @@
-# The Botanist E-Commerce Site 
+<p align="center">
+  <h1 align="center">The Botanist E-Commerce Site</h3>
+</p>
 
-Link to site: https://the-botanist-project.herokuapp.com/
-<br/>
+
+<p align="center">
+  Link to site: https://the-botanist-project.herokuapp.com/
+</p>
+
 
 ## Table of Contents 
 * [Description](#description)
