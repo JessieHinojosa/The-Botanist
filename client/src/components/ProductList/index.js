@@ -48,7 +48,7 @@ function ProductList() {
     return (
     <div className="py-2">
       {state.products.length ? (
-        <div className="px-8 pb-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-24">
+        <div className="px-8 pb-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-24 sm:gap-12">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

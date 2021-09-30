@@ -41,7 +41,7 @@ function CategoryMenu() {
   };
 
 return (
-  <div className="flex justify-center items-center h-16 bg-green-800 relative shadow-sm font-sans">
+  <div className="flex justify-center items-center py-4 bg-green-800 relative shadow-sm font-sans">
     {/* add "All plants" to categories list */}
     <button className="text-white font-semibold px-4 mx-5" onClick={
       ()=> {

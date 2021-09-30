@@ -36,8 +36,8 @@ const Nav = ({toggleDropdown}) => {
 
   return (
     <header className="sticky top-0 z-30">
-      <nav className=" flex justify-between items-center h-22 bg-gray-100  relative font-sans" role="navigation">
-        <Link to="/" className="sm:pl-4 lg:pl-16 md:w-96 sm:w-24  py-2">
+      <nav className=" flex justify-between items-center h-auto bg-gray-100  relative font-sans" role="navigation">
+        <Link to="/" className="sm:pl-4 lg:pl-16 md:w-96 sm:w-48 py-2">
           <img src={logo} alt="name-logo" />
         </Link>
 

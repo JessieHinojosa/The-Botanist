@@ -108,17 +108,21 @@ const Detail = () => {
                             alt={currentProduct.name}
                         />
 
-                        <div className="grid grid-cols-1">
-                            <div className="flex justify-between border-b">
-                                <h2 className="text-4xl">{currentProduct.name}</h2>
-                                <p className="text-4xl">${currentProduct.price}</p>
+                        <div className="grid grid-cols-1 p-8">
+                            <div className="flex justify-between">
+                                    <h2 className="text-4xl">{currentProduct.name}</h2>
+                                    <p className="text-4xl">${currentProduct.price}</p>
                             </div>
 
                             <div>
-                                <p className="text-xl">{currentProduct.description}</p>
+                            <p className="text-xl">{currentProduct.description}</p>
+                            </div>
+
+                            <div className="flex justify-center items-end">
+                                
                                 <button 
                                 onClick={addToCart}
-                                className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400"
+                                className="bg-green-500 text-white px-4 py-2 mx-2 rounded-full hover:bg-green-400"
                                 >
                                     Add to Cart
                                 </button>
