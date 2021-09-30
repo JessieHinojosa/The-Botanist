@@ -5,6 +5,7 @@ Link to site: https://the-botanist-project.herokuapp.com/
 
 ## Table of Contents 
 * [Description](#description)
+* [Built With](#built-with)
 * [Usage](#usage)
 * [Contributing](#contributing)
 
@@ -13,6 +14,14 @@ Link to site: https://the-botanist-project.herokuapp.com/
 ## Description 
 
 
+## Built With
+* React 
+* GraphQL
+* MongoDB
+* Tailwind CSS
+* Express.js
+* Stripe
+
 
 ## Usage
 1. Navigate to the site [here](https://the-botanist-project.herokuapp.com/) for the first time 
@@ -20,7 +29,5 @@ Link to site: https://the-botanist-project.herokuapp.com/
 3. Add items to cart and checkout securely with Stripe!
 
 ## Contributing
-This project was made by `Kayla Dombrosky and Jessie Hinojosa 9/2021` <br/>
-GitHub: 
-[kdombrosky](https://github.com/kdombrosky) 
-[jayMaverick](https://github.com/jayMaverick) 
+Kayla Dombrosky - [GitHub](https://github.com/kdombrosky) 
+Jessie Hinojosa - [GitHub](https://github.com/jayMaverick) 
